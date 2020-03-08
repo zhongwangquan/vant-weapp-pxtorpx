@@ -3,7 +3,10 @@
 >将vant weapp 小程序 ui组件库中将px单位转换成rpx，并且保留其他文件
 
 >src: 未转换的组件
+
 >dist: 转换后的组件
+
+执行：npm run dev
 
 
 ```javascript
