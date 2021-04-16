@@ -1,0 +1,182 @@
+.resend_detail_container{
+    padding-top:0.5px;
+    padding-bottom:25px;
+    min-height:100%;
+    .owner_info{
+        /* margin-top:128px; */
+        width:100%;
+        background-color:rgba(255,255,255,0.2);
+        height:50px;
+        padding:10px 30px;
+        img{
+            float:left;
+            width:30px;
+            height:30px;
+            border-radius:50%;
+        }
+        .owner_info_detail{
+            float:left;
+            margin-left:10px;
+            margin-top:-2.5px;
+            color:#fff;
+            .owner_name{
+                font-size:13px;
+                font-family: PingFangSC-Semibold;
+            }
+            .owner_desc{
+                font-size:12px;
+                font-family: PingFangSC-Light;
+            }
+        }
+    }
+    .coupon_detail{
+        background-color:#fff;
+        border-radius:4px;
+        margin-left:10px;
+        margin-right:10px;
+        margin-top:12px;
+        .shop_info{
+            height:60px;
+            background-color:#f4f4f4;
+            border-bottom:1px dashed #d2d2d2;
+            border-radius:4px 4px 0 0;
+            position:relative;
+            .shop_logo{
+                float:left;
+                height:42px;
+                margin:9px 16px;
+                img{
+                    display:block;
+                    float:left;
+                    height:42px;
+                    width:42px;
+                    border-radius:50%;
+                    verticle-align:middle;
+                }
+                span{
+                    display:inline-block;
+                    line-height:42px;
+                    verticle-align:middle;
+                    font-size:16px;
+                    margin-left:15px;
+                    color:#666;
+                }
+            }
+            .discount{
+                margin-right:16.5px;
+                float:right;
+                display:inline-block;
+                line-height:60px;
+                font-size:20px;
+                color:#c55358;
+                i{
+                    &:first-child{
+                        font-size:14px;
+                    }
+                    font-size:11px;
+                }
+            }
+            em{
+                display:inline-block;
+                position:absolute;
+                height:11px;
+                border-radius:50%;
+                width:11px;
+
+            }
+            .left_circle{
+                left:-5.5px;
+                bottom:-5.5px;
+            }
+            .right_circle{
+                right:-5.5px;
+                bottom:-5.5px;
+            }
+        }
+        .coupon_info_main{
+            padding:40px 35px 14px 35px;
+            height:auto;
+            border-bottom:1px dashed #d2d2d2;
+            .coupon_name{
+                font-size:26px;
+                color:#333;
+                display:inline-block;
+                /* line-height:100px; */
+                width:100%;
+                text-align:center;
+            }
+            .expiry_date{
+                font-size:13px;
+                margin-top:30px;
+                display:inline-block;
+                width:100%;
+                text-align:center;
+                color:#999999;
+            }
+            .operate_btns{
+                margin-top:15px;
+                text-align:center;
+                span,a{display:inline-block;border-radius:5px;font-size:16px;text-align:center;line-height:45px;}
+                .resend{
+                    display:inline-block;
+                    border-radius:5px;
+                    font-size:16px;
+                    text-align:center;
+                    line-height:45px;
+                    height:45px;
+                    width:135px;
+                    color:#fff;
+                }
+                .resend_grey{
+                    background-color:#ccc;
+                    color:#fff;
+                }
+                .resend_again{
+                    height:45px;
+                    width:135px;
+                    background-color:#fff;
+                }
+                .invalid{
+                    text-align:center;
+                    height:45px;
+                    width:135px;
+                    color:#fff;
+                    background-color:#ccc;
+                }
+                .go_use{
+                    height:45px;
+                    width:135px;
+                    color:#fff;
+                    margin-left:10px;
+                    border:1px solid transparent;
+                }
+            }
+            .timeout_desc{
+                color:#efa735;
+                font-size:12px;
+                display:inline-block;
+                width:100%;
+                text-align:center;
+                margin-top:12px;
+            }
+        }
+    }
+}
+.normal-color{background-color:#c55358;}
+.discount-color{background-color:#844a7f;}
+.delivery-color{background-color:#1e8079;}
+.cash-color{background-color:#ba7d51;}
+.invalid-color{background-color:#999;}
+
+
+.normal-border{border:1px solid #c55358;color:#c55358;}
+.discount-border{border:1px solid #844a7f;color:#844a7f;}
+.delivery-border{border:1px solid #1e8079;color:#1e8079;}
+.cash-border{border:1px solid #ba7d51;color:#ba7d51;}
+.invalid-border{border-color:#999;color:#999;}
+
+.normal-font{color:#c55358;}
+.discount-font{color:#844a7f;}
+.delivery-font{color:#1e8079;}
+.cash-font{color:#ba7d51;}
+.invalid-font{color:#999;}

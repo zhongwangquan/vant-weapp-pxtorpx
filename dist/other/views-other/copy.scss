@@ -1,0 +1,45 @@
+.copy_container{
+    background: #fff;
+    height: 100vh;
+    #copyContent{
+        position: absolute;
+        opacity:0;
+        top: -50px;
+    }
+    .banner{
+        img{
+            width: 100%;
+        }
+    }
+    .copy-text{
+        margin: 5px auto;
+        font-size: 15px;
+        width: 270px;
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 6px;
+        color: #999999;
+        font-size: 14px;
+        user-select:text;
+    }
+
+    .copy_success{
+        text-align: center;
+        margin-top: 5px;
+        font-size: 14px;
+        color: #999;
+    }
+    .tag-read{
+        margin: 7px auto 0 auto;
+        width: 160px;
+        height: 50px;
+        display: block;
+        color: #fff;
+        font-size: 15px;
+        background:transparent;
+        border: none;
+        background-size: 100% 100%;
+        padding-bottom: 10px;
+        background-image: url('../assets/images/btn.png');
+    }
+}

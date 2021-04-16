@@ -1,0 +1,14 @@
+.hn-toast{
+    position:absolute;
+    top:50%;
+    width:100%;
+    text-align:center;
+    color:#fff;
+    font-size:30px;
+    span{
+        border-radius:30px;
+        display:inline-block;
+        padding:20px 30px;
+        background-color:rgba(0,0,0,0.6);
+    }
+}

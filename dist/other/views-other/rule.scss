@@ -1,0 +1,7 @@
+.wrap-rules{ position: relative; z-index: 1; padding-bottom: 20px;}
+.wrap-rules > ul{ width: 90%; margin: 0 auto;}
+.wrap-rules > ul li{ padding: 10px 0; border-bottom: 0.5px solid #d1d1d1; color: #666; font-size: 14px; line-height: 20px;}
+.wrap-rules > ul li:last-child{ border-bottom: 0;}
+.wrap-rules > ul li em{ font-weight: bold; color: #1f78e5;}
+.wrap-rules > ul li .wrap-rules-Q{ margin-bottom: 10px; font-weight: bold;font-size: 15px;}
+.wrap-rules > ul li .wrap-rules-A{}

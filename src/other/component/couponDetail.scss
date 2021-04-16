@@ -1,0 +1,132 @@
+.coupon_info_detail{
+    padding:50px 40px 50px 60px;
+    height:auto;
+    border-bottom:2px dashed #d2d2d2;
+    .coupon_a{
+        a{
+            color:#238bd0 !important;
+        }
+    }
+    .coupon_desc{
+        /* margin-bottom:50px; */
+        position:relative;
+        &.single-coupon { 
+          .telephone{
+                top:50px; 
+            }
+        } 
+        h4{
+            position: relative;
+            font-size:32px;
+            color:#333;
+            margin-bottom:15px;
+            font-weight: 600;
+        }
+        .specks{
+            display: block;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: -28px;
+        }
+        span{
+            font-size:26px;
+            color:#999;
+        }
+        .name{
+            color:#585858;
+            width: 410px;
+        }
+        .address{
+            width: 410px;
+            word-wrap: break-word;
+            max-height: 68px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            -webkit-line-clamp: 2;
+            display: block;
+        }
+        .address2{
+            max-height: 68px;
+            display: block;
+            word-break:break-all;
+            width:440px;
+            overflow:hidden;
+        }
+        a{
+            display: inline-block;
+            font-size:26px;
+            color:#999;
+            word-wrap: break-word;
+        }
+        .telephone{
+            background-size:44px 44px;
+            display:inline-block;
+            width:44px;
+            height:44px;
+            position:absolute;
+            right:4px;
+            top:76px; 
+        }
+        .right{
+            display:inline-block;
+            width:100px;
+            font-size:24px;
+            position:absolute;
+            right:72px;
+            top:60px;
+        }
+        .vertica{
+            display:inline-block;
+            width:4px;
+            height: 70px;
+            position:absolute;
+            background: #B6B6B6;
+            right:69px;
+            top:62px;
+        }
+    }
+    .more-shop-con{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .more-shop{
+        font-size:22px;
+        color:#999;
+        border: 2px solid #999;
+        padding: 10px 20px;
+        min-width: 160px;
+        width: auto;
+        display: inline-block;
+        margin:0 auto;
+        border-radius: 8px;
+        vertical-align: middle;
+    }
+    .more-shop-img{
+        width: 11px;
+        height: 19px;
+        margin-left: 10px;
+        vertical-align: middle;
+        margin-top: -6px;
+    }
+    .coupon_desc:last-child{
+        margin-bottom:0;
+    }
+
+}
+.normal-color{background-color:#c55358;}
+.discount-color{background-color:#844a7f;}
+.delivery-color{background-color:#1e8079;}
+.cash-color{background-color:#ba7d51;}
+.invalid-color{background-color:#999;}
+.byGifts-color{background-color:#75B6C6;}
+
+.byGifts-bg{background-image: url('../assets/images/buleCall.png');}
+.normal-bg{background-image: url('../assets/images/phone.png');}
+.discount-bg{background-image: url('../assets/images/p@2x.png');}
+.delivery-bg{background-image: url('../assets/images/green@2x.png');}
+.cash-bg{background-image: url('../assets/images/y@2x.png');}
+.invalid-bg{background-image: url('../assets/images/g@2x.png');}

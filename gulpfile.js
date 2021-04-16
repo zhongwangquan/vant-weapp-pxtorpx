@@ -6,7 +6,7 @@ const pxtorem = require('postcss-pxtransform');
 
 // 复制文件到dist ,除了wxss文件
 gulp.task('copy', function(){
-    return gulp.src(["src/**/*.**","!src/**/*.wxss"])  
+    return gulp.src(["src/**/*.**","!src/**/*.scss"])  
       .pipe(gulp.dest("dist"))
 })
 
@@ -14,18 +14,14 @@ gulp.task('copy', function(){
 gulp.task('pxTorpx', function(){
   let options={
       //平台类型
-      platform: 'weapp',
+      platform: 'rn',
       //设备宽度 对应iphone 6
       designWidth: 750,
-      //转换比例 覆盖插件默认比例
-      deviceRatio:{
-        '750':0.5
-      }
     }
     let processors = [
         pxtorem(options)
     ];
-      return gulp.src('src/**/*.wxss')
+      return gulp.src('src/**/*.scss')
           .pipe(postcss(processors))
           .pipe(gulp.dest('dist'));
 })

@@ -1,0 +1,20 @@
+.quick-back {
+  width: 92px;
+  height: 88px;
+  position: fixed;
+  right: 30px;
+  bottom: 200px;
+  z-index: 2;
+  opacity: 0.8;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.prev {
+    background-image: url(../../assets/images/common/quick-action-back@2x.png);
+  }
+
+  &.home {
+    background-image: url(../../assets/images/common/quick-action-go-index@2x.png);
+  }
+}

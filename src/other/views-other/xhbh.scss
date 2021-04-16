@@ -1,0 +1,121 @@
+.wrap-xdf-detail {
+    background: #c41919;
+    background: radial-gradient(circle, #e21f14 20%, #c41919 45%);
+    height: 100%;
+    width: 100%;
+    padding-bottom: 40px; }
+.wrap-xdf ul {
+    padding-top: 40px;
+    width: 82%;
+    margin: 0 auto; }
+.wrap-xdf ul li {
+    margin-bottom: 20px; }
+.wrap-xdf .wrap-xdf-coupon {
+    width: 100%;
+    margin: 0 auto;
+    height: auto; }
+.wrap-xdf .wrap-xdf-hr {
+    width: 80%;
+    height: 1px;
+    margin: 30px auto 0 auto;
+    background: rgba(255, 255, 255, 0.7); }
+.wrap-xdf .wrap-xdf-title {
+    height: 50px;
+    background: #c41919;
+    text-align: center;
+    width: 120px;
+    margin: 10px auto 0 auto; }
+.wrap-xdf .wrap-xdf-title span {
+    position: relative;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: -20px; }
+.wrap-xdf .wrap-xdf-content {
+    font-size: 20px;
+    color: #ffffff;
+    width: 80%;
+    margin: 0 auto; }
+.wrap-xdf .wrap-xdf-content p {
+    line-height: 150%;
+    margin-bottom: 6px; }
+.box {
+    width: 82%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+p {
+    color: #ffffff;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.intro, .detail {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 140%;
+    font-weight: lighter;
+}
+
+.shop_address{
+    margin-left: 0 !important;
+}
+.sub-title {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.div-hr {
+    /*b50809*/
+    height: 1px;
+    background: #b50809;
+    width: 100%;
+    margin: 24px auto 24px auto;
+}
+
+.schools {
+    width: 100% !important;
+    padding-top: 0 !important;
+}
+
+.schools li {
+    color: #ffffff;
+    margin-bottom: 30px !important;
+}
+
+.schools-list {
+    width: 100% !important;
+    margin-top: 16px !important;
+    padding-top: 0 !important;
+}
+
+.schools-list li {
+    margin-bottom: 10px !important;
+    padding-bottom: 5px !important;
+    border-bottom: 1px rgba(255, 255, 255, 0.75) solid;
+}
+
+.phoneNumber {
+    float: right;
+}
+
+.block-name {
+    font-weight: lighter;
+
+}
+
+.school-name {
+    /*margin-left: 3rem;*/
+    font-weight: lighter;
+
+}
+
+.l1-left {
+    float: left;
+}
