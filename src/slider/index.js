@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/version';
+import { getRect } from '../common/utils';
 VantComponent({
   mixins: [touch],
   props: {
@@ -23,11 +24,15 @@ VantComponent({
     value: {
       type: Number,
       value: 0,
-      observer: 'updateValue',
+      observer(val) {
+        if (val !== this.value) {
+          this.updateValue(val);
+        }
+      },
     },
     barHeight: {
       type: null,
-      value: '2px',
+      value: 2,
     },
   },
   created() {
@@ -37,7 +42,7 @@ VantComponent({
     onTouchStart(event) {
       if (this.data.disabled) return;
       this.touchStart(event);
-      this.startValue = this.format(this.data.value);
+      this.startValue = this.format(this.value);
       this.dragStatus = 'start';
     },
     onTouchMove(event) {
@@ -47,8 +52,8 @@ VantComponent({
       }
       this.touchMove(event);
       this.dragStatus = 'draging';
-      this.getRect('.van-slider').then((rect) => {
-        const diff = (this.deltaX / rect.width) * 100;
+      getRect(this, '.van-slider').then((rect) => {
+        const diff = (this.deltaX / rect.width) * this.getRange();
         this.newValue = this.startValue + diff;
         this.updateValue(this.newValue, false, true);
       });
@@ -63,7 +68,7 @@ VantComponent({
     onClick(event) {
       if (this.data.disabled) return;
       const { min } = this.data;
-      this.getRect('.van-slider').then((rect) => {
+      getRect(this, '.van-slider').then((rect) => {
         const value =
           ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
         this.updateValue(value, true);
@@ -73,8 +78,8 @@ VantComponent({
       value = this.format(value);
       const { min } = this.data;
       const width = `${((value - min) * 100) / this.getRange()}%`;
+      this.value = value;
       this.setData({
-        value,
         barStyle: `
           width: ${width};
           ${drag ? 'transition: none;' : ''}

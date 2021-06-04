@@ -6,7 +6,7 @@ const pxtorem = require('postcss-pxtransform');
 
 // 复制文件到dist ,除了wxss文件
 gulp.task('copy', function(){
-    return gulp.src(["src/**/*.**","!src/**/*.wxss"])  
+    return gulp.src(["src/**/*.**","!src/**/*.wxss", "!src/**/*.d.ts"])  
       .pipe(gulp.dest("dist"))
 })
 

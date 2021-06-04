@@ -1,16 +1,11 @@
 import { VantComponent } from '../common/component';
-const FONT_COLOR = '#ed6a0c';
-const BG_COLOR = '#fffbe8';
+import { getRect, requestAnimationFrame } from '../common/utils';
 VantComponent({
   props: {
     text: {
       type: String,
       value: '',
-      observer() {
-        wx.nextTick(() => {
-          this.init();
-        });
-      },
+      observer: 'init',
     },
     mode: {
       type: String,
@@ -31,11 +26,7 @@ VantComponent({
     speed: {
       type: Number,
       value: 50,
-      observer() {
-        wx.nextTick(() => {
-          this.init();
-        });
-      },
+      observer: 'init',
     },
     scrollable: {
       type: Boolean,
@@ -45,14 +36,9 @@ VantComponent({
       type: String,
       value: '',
     },
-    color: {
-      type: String,
-      value: FONT_COLOR,
-    },
-    backgroundColor: {
-      type: String,
-      value: BG_COLOR,
-    },
+    color: String,
+    backgroundColor: String,
+    background: String,
     wrapable: Boolean,
   },
   data: {
@@ -67,34 +53,39 @@ VantComponent({
   destroyed() {
     this.timer && clearTimeout(this.timer);
   },
+  mounted() {
+    this.init();
+  },
   methods: {
     init() {
-      Promise.all([
-        this.getRect('.van-notice-bar__content'),
-        this.getRect('.van-notice-bar__wrap'),
-      ]).then((rects) => {
-        const [contentRect, wrapRect] = rects;
-        if (
-          contentRect == null ||
-          wrapRect == null ||
-          !contentRect.width ||
-          !wrapRect.width
-        ) {
-          return;
-        }
-        const { speed, scrollable, delay } = this.data;
-        if (scrollable && wrapRect.width < contentRect.width) {
-          const duration = (contentRect.width / speed) * 1000;
-          this.wrapWidth = wrapRect.width;
-          this.contentWidth = contentRect.width;
-          this.duration = duration;
-          this.animation = wx.createAnimation({
-            duration,
-            timingFunction: 'linear',
-            delay,
-          });
-          this.scroll();
-        }
+      requestAnimationFrame(() => {
+        Promise.all([
+          getRect(this, '.van-notice-bar__content'),
+          getRect(this, '.van-notice-bar__wrap'),
+        ]).then((rects) => {
+          const [contentRect, wrapRect] = rects;
+          if (
+            contentRect == null ||
+            wrapRect == null ||
+            !contentRect.width ||
+            !wrapRect.width
+          ) {
+            return;
+          }
+          const { speed, scrollable, delay } = this.data;
+          if (scrollable || wrapRect.width < contentRect.width) {
+            const duration = (contentRect.width / speed) * 1000;
+            this.wrapWidth = wrapRect.width;
+            this.contentWidth = contentRect.width;
+            this.duration = duration;
+            this.animation = wx.createAnimation({
+              duration,
+              timingFunction: 'linear',
+              delay,
+            });
+            this.scroll();
+          }
+        });
       });
     },
     scroll() {
@@ -106,22 +97,25 @@ VantComponent({
           .step()
           .export(),
       });
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         this.setData({
           animationData: this.animation
             .translateX(-this.contentWidth)
             .step()
             .export(),
         });
-      }, 20);
+      });
       this.timer = setTimeout(() => {
         this.scroll();
       }, this.duration);
     },
-    onClickIcon() {
-      this.timer && clearTimeout(this.timer);
-      this.timer = null;
-      this.setData({ show: false });
+    onClickIcon(event) {
+      if (this.data.mode === 'closeable') {
+        this.timer && clearTimeout(this.timer);
+        this.timer = null;
+        this.setData({ show: false });
+        this.$emit('close', event.detail);
+      }
     },
     onClick(event) {
       this.$emit('click', event);

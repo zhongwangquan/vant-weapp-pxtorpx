@@ -1,18 +1,14 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
+import { useChildren } from '../common/relation';
 VantComponent({
-  relation: {
-    name: 'grid-item',
-    type: 'descendant',
-    current: 'grid',
-  },
+  relation: useChildren('grid-item'),
   props: {
     square: {
       type: Boolean,
       observer: 'updateChildren',
     },
     gutter: {
-      type: [Number, String],
+      type: null,
       value: 0,
       observer: 'updateChildren',
     },
@@ -35,17 +31,14 @@ VantComponent({
       value: true,
       observer: 'updateChildren',
     },
-  },
-  data: {
-    viewStyle: '',
-  },
-  created() {
-    const { gutter } = this.data;
-    if (gutter) {
-      this.setData({
-        viewStyle: `padding-left: ${addUnit(gutter)}`,
-      });
-    }
+    direction: {
+      type: String,
+      observer: 'updateChildren',
+    },
+    iconSize: {
+      type: String,
+      observer: 'updateChildren',
+    },
   },
   methods: {
     updateChildren() {

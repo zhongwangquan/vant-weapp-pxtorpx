@@ -21,7 +21,25 @@ function compareVersion(v1, v2) {
   }
   return 0;
 }
-export function canIUseModel() {
+function gte(version) {
   const system = getSystemInfoSync();
-  return compareVersion(system.SDKVersion, '2.9.3') >= 0;
+  return compareVersion(system.SDKVersion, version) >= 0;
+}
+export function canIUseModel() {
+  return gte('2.9.3');
+}
+export function canIUseFormFieldButton() {
+  return gte('2.10.3');
+}
+export function canIUseAnimate() {
+  return gte('2.9.0');
+}
+export function canIUseGroupSetData() {
+  return gte('2.4.0');
+}
+export function canIUseNextTick() {
+  return wx.canIUse('nextTick');
+}
+export function canIUseCanvas2d() {
+  return gte('2.9.0');
 }
